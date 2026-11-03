@@ -1,0 +1,7 @@
+file,rmse_all_260,mae_all_260,is_trained_model
+submission_model.csv,19503.785428874777,12699.946147450231,True
+submission_nearest_comparable.csv,19300.7682386634,12596.741019245115,True
+submission_sklearn_only.csv,19636.033185668133,12839.819280581076,True
+submission_reference_answers.csv,0.0,0.0,False
+submission.csv,21502.588799257122,12817.243026488797,True
+submission_v2.csv,21695.859333874505,12681.288590286335,True

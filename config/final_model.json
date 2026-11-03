@@ -1,0 +1,80 @@
+{
+  "selection_source": "Only train.csv, 90 initial 5-fold configurations, finalists confirmed on two additional 5-fold partitions. Test labels unused.",
+  "guard_k": 3,
+  "seeds": [
+    20261103,
+    131,
+    271
+  ],
+  "models": [
+    {
+      "name": "svr2_C100_g0.0002",
+      "spec": {
+        "family": "svr",
+        "C": 100,
+        "gamma": 0.0002,
+        "epsilon": 0.008,
+        "target": "log"
+      },
+      "policy": "remove_extreme",
+      "weight": 0.571664861813428
+    },
+    {
+      "name": "elastic_a0.0002",
+      "spec": {
+        "family": "elastic",
+        "alpha": 0.0002,
+        "l1_ratio": 0.8,
+        "target": "log",
+        "interactions": true
+      },
+      "policy": "remove_extreme",
+      "weight": 0.32741457997272905
+    },
+    {
+      "name": "lgb_log_m1_l8",
+      "spec": {
+        "family": "lightgbm",
+        "target": "log",
+        "n_estimators": 1800,
+        "learning_rate": 0.025,
+        "num_leaves": 8,
+        "min_child_samples": 1,
+        "reg_lambda": 2,
+        "reg_alpha": 0.05,
+        "colsample_bytree": 0.85
+      },
+      "policy": "all",
+      "weight": 0.10092055821384291
+    }
+  ],
+  "repeated_oof_rmse": 20678.77550650147,
+  "seed_rmse": [
+    20890.086686890776,
+    20666.027524061978,
+    20478.15553055883
+  ],
+  "cross_seed_weight_checks": [
+    {
+      "weight_fit_seed": 20261103,
+      "assessment_rmse": {
+        "131": 21118.39402323877,
+        "271": 20798.393310005096
+      }
+    },
+    {
+      "weight_fit_seed": 131,
+      "assessment_rmse": {
+        "20261103": 21234.89945904713,
+        "271": 20372.749557371164
+      }
+    },
+    {
+      "weight_fit_seed": 271,
+      "assessment_rmse": {
+        "20261103": 21449.773995532,
+        "131": 20630.67122958085
+      }
+    }
+  ]
+}
